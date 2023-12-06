@@ -50,6 +50,5 @@ public class MajorityElement {
 
     public static void main(String[] args) {
         int[] arr = {1,3,1,1,4,1,1,5,1,1,6,2,2};
-        System.out.println(Solution.majorityElement(arr));
     }
 }
