@@ -1,17 +1,14 @@
-public class BestTimeToBuyAndSellStock {
+public class BestTimeToBuyAndSellStockII {
     static class Solution {
         public static int maxProfit(int[] prices) {
+            int profit = 0;
             int left = 0;
             int right = 1;
-            int profit = 0;
 
             while (right < prices.length) {
                 if (prices[left] < prices[right]) {
-                    int curr = prices[right] - prices[left];
-                    if (curr > profit) {
-                        profit = curr;
-                    }
-
+                    profit += prices[right] - prices[left];
+                    left++;
                     right++;
                 } else {
                     left = right;
@@ -24,8 +21,8 @@ public class BestTimeToBuyAndSellStock {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,4,2,5,7,2,4,9,0,9};
+        int[] arr = {7,1,5,3,6,4};
 
-        System.out.println(Solution.maxProfit(arr));
+        System.out.println(BestTimeToBuyAndSellStockII.Solution.maxProfit(arr));
     }
 }
